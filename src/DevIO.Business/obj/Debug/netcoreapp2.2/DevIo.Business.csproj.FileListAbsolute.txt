@@ -1,0 +1,10 @@
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\bin\Debug\netcoreapp2.2\DevIo.Business.deps.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\bin\Debug\netcoreapp2.2\DevIo.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\bin\Debug\netcoreapp2.2\DevIo.Business.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.csproj.AssemblyReference.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.AssemblyInfoInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.AssemblyInfo.cs
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.csproj.CoreCompileInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.pdb

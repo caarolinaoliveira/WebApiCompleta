@@ -1,0 +1,13 @@
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\bin\Debug\netcoreapp2.2\DevIo.Data.deps.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\bin\Debug\netcoreapp2.2\DevIo.Data.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\bin\Debug\netcoreapp2.2\DevIo.Data.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\bin\Debug\netcoreapp2.2\DevIo.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\bin\Debug\netcoreapp2.2\DevIo.Business.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.csproj.AssemblyReference.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.AssemblyInfoInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.AssemblyInfo.cs
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.csproj.CoreCompileInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.csproj.Up2Date
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Data\obj\Debug\netcoreapp2.2\DevIo.Data.pdb
