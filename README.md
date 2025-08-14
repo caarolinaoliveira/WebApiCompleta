@@ -8,8 +8,8 @@ dotnet new sln -n APICompleta
 ```
 ## 2. Crie a seguinte estrutura de pastas 
 
-APICompleta/
-│  
+APICompleta/  
+│    
 ├── src/          # Contém todos os projetos da aplicação  
 │   ├── DevIO.Api         # Projeto principal da API  
 │   ├── DevIO.Business    # Regras de negócio e entidades  
