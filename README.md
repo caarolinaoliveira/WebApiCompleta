@@ -12,13 +12,12 @@ APICompleta/
 │  
 ├── src/          # Contém todos os projetos da aplicação  
 │   ├── DevIO.Api         # Projeto principal da API  
-
-│   ├── DevIO.Business    # Regras de negócio e entidades
-│   └── DevIO.Data        # Acesso a dados
-│
-├── tests/       # Projetos de testes
-├── sql/         # Scripts e arquivos de banco de dados
-
+│   ├── DevIO.Business    # Regras de negócio e entidades  
+│   └── DevIO.Data        # Acesso a dados  
+│  
+├── tests/       # Projetos de testes  
+├── sql/         # Scripts e arquivos de banco de dados  
+  
 ## 3. Crie os projetos dentro da pasta src
 ```bash
 cd src
