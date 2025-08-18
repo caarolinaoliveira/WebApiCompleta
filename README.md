@@ -44,3 +44,44 @@ Resultado no arquivo .csproj da API
     <ProjectReference Include="..\DevIo.Data\DevIo.Data.csproj" />
   </ItemGroup>
 ```
+
+# Escopo do projeto
+Entidade Fornecedor implementada na camada de negócios. Essa entidade representa uma tabela no banco de dados relacionada com outras entidades( Endereço(1:1), Produtos(1: N))
+
+Fluxo de leitura
+![Fluxo da arquitetura](image.png)
+
+Fluxo de gravaçao (post, put ou delete)
+![Fluxo da arquitetura](image-1.png)
+
+
+# implementando DTOs (ViewModels)
+Temos algumas entidades mas não podemos expor elas na camada api 
+implementar na paste DevIo.Api uma pasta chamada ViewModels e dentro dela criar três arquivos: EnderecoViewModel, FornecedorViewModel e ProdutoViewModel
+
+# Criar controllers
+podemis iniciar com a MainController: 
+- validação de notificação de erro
+- validação de modelstate
+- validação da operação de negócios
+
+# instalar AutoMapper
+Esse código permite instalar a biblioteca automapper e biblioteca que permite injeção de dependência 
+```bash
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+```
+
+# Criar pasta Configuration
+Criar arquivo AutoMapperConfig e injetar as informações
+```bash
+CreateMap<Fornecedor, FornecedorViewModel>().ReverseMap();  
+CreateMap<Endereco, EnderecoViewModel>().ReverseMap();  
+CreateMap<Produto, ProdutoViewModel>().ReverseMap();  
+``` 
+
+#  Configura o AutoMapper no Program.cs para usar o perfil definido
+```bash 
+builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
+```
+# Criar novo Controller Fornecedores separado
+# Configurar Injeção de Dependência 
