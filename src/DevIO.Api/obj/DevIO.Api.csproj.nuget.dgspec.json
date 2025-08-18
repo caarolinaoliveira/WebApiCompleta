@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj": {}
+    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj": {
+    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj",
+        "projectUniqueName": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj",
         "projectName": "DevIO.Api",
-        "projectPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj",
+        "projectPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj",
         "packagesPath": "C:\\Users\\848049\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\obj\\",
+        "outputPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\848049\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -50,6 +50,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"

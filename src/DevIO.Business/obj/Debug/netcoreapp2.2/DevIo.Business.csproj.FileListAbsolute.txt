@@ -8,3 +8,4 @@ C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Busines
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.csproj.CoreCompileInputs.cache
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.dll
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIo.Business\obj\Debug\netcoreapp2.2\DevIo.Business.sourcelink.json
