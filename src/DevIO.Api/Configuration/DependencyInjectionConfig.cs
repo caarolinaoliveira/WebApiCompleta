@@ -1,7 +1,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Dev.Data.Context;
-using Dev.Business.Interfaces;
 using Dev.Data.Repository;
+using Dev.Business.Interfaces;
+using Dev.Business.Services;
+using Dev.Business.Notificacoes;
+using Dev.Business.Models;
+using DevIO.Api.Extensions;
 
 namespace DevIO.Api.Configuration
 {
@@ -12,6 +16,14 @@ namespace DevIO.Api.Configuration
             services.AddScoped<MeuDbContext>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped<IUser, AspNetUser>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
             return services;
         }
     }

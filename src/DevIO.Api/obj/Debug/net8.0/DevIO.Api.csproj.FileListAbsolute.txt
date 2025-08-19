@@ -174,3 +174,9 @@ C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\obj
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\obj\Debug\net8.0\DevIO.Api.pdb
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\obj\Debug\net8.0\DevIO.Api.genruntimeconfig.cache
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\obj\Debug\net8.0\ref\DevIO.Api.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll

@@ -2,3 +2,6 @@ appsettings.json
 appsettings.Development.json
 [Bb]in/
 [Oo]bj/
+Bin/
+bin/ 
+obj/
