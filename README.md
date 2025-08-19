@@ -18,6 +18,16 @@ APICompleta/
 ├── tests/       # Projetos de testes
 ├── sql/         # Scripts e arquivos de banco de dados
 
+
+mesmo que já tenhamos os arquivos das pastas Data e Business, iremos criar pelo terminal o projeto, pois queremos na última versão e iremos refatorando 
+``` bash
+dotnet new classlib -n Dev.Data
+```
+``` bash
+dotnet new classlib -n Dev.Business
+```
+
+
 ## 3. Crie os projetos dentro da pasta src
 ```bash
 cd src
@@ -92,3 +102,15 @@ dotnet add package FluentValidation
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Design
+
+# instalar no Data
+dotnet add package Microsoft.Extensions.Configuration.Json
+
+
+# criar banco 
+```bash
+dotnet ef database update
+```
+update pq o migration já existe
+
+Durante o design-time, o EF Core não executa o Program.cs, então ele não consegue acessar a connection string dessa forma. Por isso, você precisa de uma classe IDesignTimeDbContextFactory que forneça explicitamente a connection string.

@@ -4,6 +4,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using Dev.Business.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Dev.Data.Context;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+
 
 namespace Dev.Data.Context
 {
@@ -46,5 +52,25 @@ namespace Dev.Data.Context
 
             return base.SaveChangesAsync(cancellationToken);
         }
+
+        public class MeuDbContextFactory : IDesignTimeDbContextFactory<MeuDbContext>
+        {
+            public MeuDbContext CreateDbContext(string[] args)
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<MeuDbContext>();
+
+                // Lê do appsettings.json
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+
+                return new MeuDbContext(optionsBuilder.Options);
+            }
+        }
+
     }
 }
