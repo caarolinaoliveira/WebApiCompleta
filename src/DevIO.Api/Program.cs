@@ -13,7 +13,7 @@ builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
 
 builder.Services.ResolveDependencies();
 
-builder.Services.AddDbContext<DevIO.Data.Context.MeuDbContext>(options =>
+builder.Services.AddDbContext<Dev.Data.Context.MeuDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();

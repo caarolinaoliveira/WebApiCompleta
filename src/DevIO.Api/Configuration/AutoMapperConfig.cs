@@ -1,6 +1,6 @@
 using AutoMapper;
 using DevIO.Api.ViewModels;
-using DevIO.Business.Models;
+using Dev.Business.Models;
 
 namespace DevIO.Api.AutoMapper
 {

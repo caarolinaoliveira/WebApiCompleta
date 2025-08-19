@@ -1,7 +1,7 @@
 
 using AutoMapper;
 using DevIO.Api.ViewModels;
-using DevIO.Business.Intefaces;
+using Dev.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevIO.Api.Controllers

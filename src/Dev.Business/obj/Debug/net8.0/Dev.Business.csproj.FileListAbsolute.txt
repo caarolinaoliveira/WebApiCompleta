@@ -1,0 +1,15 @@
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.AssemblyInfoInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.AssemblyInfo.cs
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.csproj.CoreCompileInputs.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.sourcelink.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.csproj.AssemblyReference.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\bin\Debug\net8.0\Dev.Business.deps.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\bin\Debug\net8.0\Dev.Business.runtimeconfig.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\bin\Debug\net8.0\Dev.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\bin\Debug\net8.0\Dev.Business.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\refint\Dev.Business.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.pdb
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\Dev.Business.genruntimeconfig.cache
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\Dev.Business\obj\Debug\net8.0\ref\Dev.Business.dll

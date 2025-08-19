@@ -85,3 +85,10 @@ builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
 ```
 # Criar novo Controller Fornecedores separado
 # Configurar Injeção de Dependência 
+
+
+# instalar no Business
+dotnet add package FluentValidation
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using DevIO.Data.Context;
-using DevIO.Business.Intefaces;
-using DevIO.Data.Repository;
+using Dev.Data.Context;
+using Dev.Business.Interfaces;
+using Dev.Data.Repository;
 
 namespace DevIO.Api.Configuration
 {
