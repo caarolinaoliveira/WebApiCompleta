@@ -42,10 +42,44 @@ namespace DevIO.Api.Controllers
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
-            await _fornecedorService.Adicionar(fornecedor);
-            return CreatedAtAction(nameof(ObterPorId), new { id = fornecedor.Id }, fornecedor);
 
+            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+            var result = await _fornecedorService.Adicionar(fornecedor);
+
+            if (!result) return BadRequest();
+            return Ok(fornecedor);
+        }
+
+        [HttpPut("{id:guid}")]
+        public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
+        {
+            if (id != fornecedorViewModel.Id) return BadRequest();
+
+            if (!ModelState.IsValid) return BadRequest();
+
+            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+            var result = await _fornecedorService.Atualizar(fornecedor);
+
+            if (!result) return BadRequest();
+            return Ok(fornecedor);
+
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<ActionResult> Excluir(Guid id)
+        {
+
+            var result = await _fornecedorService.Remover(id);
+
+            if (!result) return BadRequest();
+            return Ok();
+        }
+
+        private async Task<FornecedorViewModel> ObterFornecedorProdutosEndereco(Guid id)
+        {
+            var fornecedor = _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
+            if (fornecedor == null) return null;
+            return fornecedor;
         }
 
     }
