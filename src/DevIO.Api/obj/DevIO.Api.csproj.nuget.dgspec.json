@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj": {}
+    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj": {}
   },
   "projects": {
     "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\Dev.Business\\Dev.Business.csproj": {
@@ -164,14 +164,14 @@
         }
       }
     },
-    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj": {
+    "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj",
+        "projectUniqueName": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj",
         "projectName": "DevIO.Api",
-        "projectPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\DevIO.Api.csproj",
+        "projectPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\DevIO.Api.csproj",
         "packagesPath": "C:\\Users\\848049\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\obj\\",
+        "outputPath": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\devio.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\848049\\AppData\\Roaming\\NuGet\\NuGet.Config"

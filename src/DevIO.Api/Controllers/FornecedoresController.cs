@@ -23,17 +23,17 @@ namespace DevIO.Api.Controllers
             _fornecedorService = fornecedorService;
         }
 
+
         [HttpGet]
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
         {
-            var fornecedores = _mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos());
-            return fornecedores;
+            return _mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos());
         }
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> ObterPorId(Guid id)
         {
-            var fornecedor = _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterPorId(id));
+            var fornecedor = await ObterFornecedorProdutosEndereco(id);
             if (fornecedor == null) return NotFound();
             return fornecedor;
         }
@@ -53,7 +53,7 @@ namespace DevIO.Api.Controllers
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
-            if (id != fornecedorViewModel.Id) return BadRequest();
+            if (id != fornecedorViewModel.Id) return NotFound();
 
             if (!ModelState.IsValid) return BadRequest();
 

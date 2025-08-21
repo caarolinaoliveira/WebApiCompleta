@@ -19,9 +19,9 @@ namespace DevIO.Api.ViewModels
         [StringLength(1000, ErrorMessage = "O campo {0} deve ter no máximo {1} caracteres.")]
         public string Descricao { get; set; }
 
-        public string ImagemUpload { get; set; }
+        public string? ImagemUpload { get; set; }
 
-        public string Imagem { get; set; }
+        public string? Imagem { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
 
@@ -32,6 +32,6 @@ namespace DevIO.Api.ViewModels
         public bool Ativo { get; set; }
 
         [ScaffoldColumn(false)]
-        public string NomeFornecedor { get; set; }
+        public string? NomeFornecedor { get; set; }
     }
 }
