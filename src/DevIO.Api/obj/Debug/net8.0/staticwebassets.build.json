@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "U0RfrCmp78r+/68s8bmOvKc3ID51YUgUc2h0oLIHA4g=",
+  "Hash": "7K20VD3bNx27m8axaKpygtOt++3N3iLHVVNfQ+p3aHI=",
   "Source": "DevIO.Api",
   "BasePath": "_content/DevIO.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "DevIO.Api\\wwwroot",
+      "Source": "DevIO.Api",
+      "ContentRoot": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\wwwroot\\",
+      "BasePath": "_content/DevIO.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\wwwroot\\imagens\\7d156708-1614-44b9-8140-73081bed8188-Copo",
+      "SourceId": "DevIO.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\848049\\DesenvolvedorIO\\WebApi\\ApiCompleta\\APICompleta\\src\\DevIO.Api\\wwwroot\\",
+      "BasePath": "_content/DevIO.Api",
+      "RelativePath": "imagens/7d156708-1614-44b9-8140-73081bed8188-Copo",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\7d156708-1614-44b9-8140-73081bed8188-Copo"
+    }
+  ]
 }
