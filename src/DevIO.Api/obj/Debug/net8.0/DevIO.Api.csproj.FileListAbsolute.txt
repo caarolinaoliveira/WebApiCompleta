@@ -181,3 +181,7 @@ C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\devio.api\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIO.Api\bin\Debug\net8.0\DevIO.Api.staticwebassets.runtime.json
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIO.Api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIO.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIO.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\848049\DesenvolvedorIO\WebApi\ApiCompleta\APICompleta\src\DevIO.Api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
