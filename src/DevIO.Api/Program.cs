@@ -6,11 +6,32 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddEnvironmentVariables();
+
+builder.Services.AddIdentityConfig(builder.Configuration);
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
     });
+
+//configure service
+builder.Services.AddDbContext<Dev.Data.Context.MeuDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
+
+// builder.Services.AddApiConfig(AppDomain.CurrentDomain.GetAssemblies());
+
+// builder.Services.AddApiConfig();
+
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
@@ -23,14 +44,10 @@ builder.Services.AddCors(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 // Configura o AutoMapper para usar o perfil definido
-builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
 
 builder.Services.ResolveDependencies();
 
-builder.Services.AddDbContext<Dev.Data.Context.MeuDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -49,6 +66,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseCors("AllowAngular");
