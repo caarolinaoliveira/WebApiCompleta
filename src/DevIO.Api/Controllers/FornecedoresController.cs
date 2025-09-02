@@ -12,7 +12,8 @@ namespace DevIO.Api.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class FornecedoresController : MainController
     {
         private readonly IFornecedorRepository _fornecedorRepository;
@@ -35,6 +36,7 @@ namespace DevIO.Api.Controllers
             _enderecoRepository = enderecoRepository;
         }
         // sem claim, para acessar o método de leitura basta estar autenticado
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
         {

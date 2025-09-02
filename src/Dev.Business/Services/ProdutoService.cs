@@ -12,7 +12,7 @@ namespace Dev.Business.Services
         private readonly IUser _user;
 
         public ProdutoService(IProdutoRepository produtoRepository,
-                              INotificador notificador, 
+                              INotificador notificador,
                               IUser user) : base(notificador)
         {
             _produtoRepository = produtoRepository;
@@ -23,7 +23,7 @@ namespace Dev.Business.Services
         {
             if (!ExecutarValidacao(new ProdutoValidation(), produto)) return;
 
-            var user = _user.GetUserId();
+            // var user = _user.GetUserId();
 
             await _produtoRepository.Adicionar(produto);
         }

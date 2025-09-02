@@ -14,7 +14,8 @@ using System.Text;
 //precisamos de duas dependencia nessa controller: SignInManager e UserManager
 namespace DevIO.Api.Controllers
 {
-    [Route("api/conta")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/conta")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -26,7 +27,7 @@ namespace DevIO.Api.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
-            
+
         }
 
         [HttpPost("nova-conta")]

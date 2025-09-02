@@ -12,7 +12,8 @@ using DevIO.Api.Extensions;
 namespace DevIO.Api.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProdutosController : MainController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -31,7 +32,7 @@ namespace DevIO.Api.Controllers
             _mapper = mapper;
             _produtoService = produtoService;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
