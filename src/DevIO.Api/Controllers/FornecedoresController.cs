@@ -1,10 +1,11 @@
+using System;
+using Microsoft.AspNetCore.Authorization;
 using AutoMapper;
 using DevIO.Api.ViewModels;
 using Dev.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Dev.Business.Models;
-using System;
-using Microsoft.AspNetCore.Authorization;
+using DevIO.Api.Extensions;
 
 namespace DevIO.Api.Controllers
     
@@ -32,8 +33,7 @@ namespace DevIO.Api.Controllers
             _fornecedorService = fornecedorService;
             _enderecoRepository = enderecoRepository;
         }
-
-        [AllowAnonymous]
+        // sem claim, para acessar o método de leitura basta estar autenticado
         [HttpGet]
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
         {
@@ -47,7 +47,7 @@ namespace DevIO.Api.Controllers
             if (fornecedor == null) return NotFound();
             return fornecedor;
         }
-
+        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
@@ -58,8 +58,7 @@ namespace DevIO.Api.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
-
-
+        [ClaimsAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
@@ -76,7 +75,7 @@ namespace DevIO.Api.Controllers
             return CustomResponse(fornecedorViewModel);
 
         }
-
+        [ClaimsAuthorize("Fornecedor", "Excluir")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult> Excluir(Guid id)
         {
@@ -94,6 +93,7 @@ namespace DevIO.Api.Controllers
             return enderecoViewModel;
         }
 
+        [ClaimsAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("atualizar-endereco/{id:guid}")]
         public async Task<ActionResult> AtualizarEndereco(Guid id, EnderecoViewModel enderecoViewModel)
         {

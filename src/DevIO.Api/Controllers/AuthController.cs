@@ -1,7 +1,13 @@
 using Dev.Api.ViewModels;
+using DevIO.Api.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Dev.Business.Interfaces;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 
 //precisamos de duas dependencia nessa controller: SignInManager e UserManager
@@ -40,7 +46,7 @@ namespace DevIO.Api.Controllers
                 // aqui ele verificar se é sucesso, se for, faz o login
                 // isPersistent é se o cookie de autenticação deve ser persistente
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                return CustomResponse(registerUser);
+                return CustomResponse(await GerarJwt(user.Email));
             }
 
             foreach (var error in result.Errors)
@@ -59,8 +65,10 @@ namespace DevIO.Api.Controllers
 
             var result = await _signInManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, isPersistent: false, lockoutOnFailure: true);
 
-            if (result.Succeeded) return CustomResponse(loginUser);
-
+            if (result.Succeeded)
+            {
+                return CustomResponse(await GerarJwt(loginUser.Email));
+            }
             if (result.IsLockedOut)
             {
                 NotificarErro("Usuário temporariamente bloqueado por tentativas inválidas");
@@ -71,14 +79,34 @@ namespace DevIO.Api.Controllers
             return CustomResponse(loginUser);
         }
 
-        private string GerarJwt()
+        private async Task<string> GerarJwt(string email)
         {
+            var user = await _userManager.FindByEmailAsync(email);
+            var claims = await _userManager.GetClaimsAsync(user);
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString()));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(DateTime.UtcNow).ToString(), ClaimValueTypes.Integer64));
+
+            foreach (var userRole in userRoles)
+            {
+                claims.Add(new Claim("role", userRole));
+            }
+
+            var identityClaims = new ClaimsIdentity();
+            identityClaims.AddClaims(claims);
+
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
             {
                 Issuer = _appSettings.Emissor,
                 Audience = _appSettings.ValidoEm,
+                Subject = identityClaims,
                 Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             });
@@ -87,5 +115,6 @@ namespace DevIO.Api.Controllers
             return encodedToken;
         }
 
+        private static long ToUnixEpochDate(DateTime date) => (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
     }
 }

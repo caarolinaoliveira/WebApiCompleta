@@ -1,0 +1,12 @@
+appsettings.json
+appsettings.Development.json
+[Bb]in/
+[Oo]bj/
+Bin/
+bin/ 
+obj/
+
+# Ignore bin and obj folders
+**/bin/
+**/obj/
+**/queuestorage**
