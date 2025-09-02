@@ -23,8 +23,9 @@ namespace DevIO.Api.Controllers
             IProdutoRepository produtoRepository,
             IMapper mapper,
             IProdutoService produtoService,
-            INotificador notificador
-        ) : base(notificador)
+            INotificador notificador,
+            IUser appUser
+        ) : base(notificador, appUser)
         {
             _produtoRepository = produtoRepository;
             _mapper = mapper;
@@ -202,7 +203,7 @@ namespace DevIO.Api.Controllers
                 return NotFound();
 
             var image = System.IO.File.ReadAllBytes(caminho);
-            return File(image, "image/jpeg"); // ou use o tipo correto conforme a extensão
+            return File(image, "image/jpeg"); 
         }
     }
 }

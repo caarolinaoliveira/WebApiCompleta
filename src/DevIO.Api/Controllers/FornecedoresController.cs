@@ -25,8 +25,9 @@ namespace DevIO.Api.Controllers
             IMapper mapper,
             IFornecedorService fornecedorService,
             INotificador notificador,
-            IEnderecoRepository enderecoRepository
-        ) : base(notificador)
+            IEnderecoRepository enderecoRepository, 
+            IUser appUser
+        ) : base(notificador, appUser)
         {
             _fornecedorRepository = fornecedorRepository;
             _mapper = mapper;
@@ -51,6 +52,7 @@ namespace DevIO.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
+            
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             await _fornecedorService.Adicionar(_mapper.Map<Fornecedor>(fornecedorViewModel));
@@ -62,12 +64,10 @@ namespace DevIO.Api.Controllers
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
-            if (id != fornecedorViewModel.Id)
+            if (UsuarioAutenticado)
             {
-                NotificarErro("Os IDs não correspondem");
-                return CustomResponse(fornecedorViewModel);
+                var userName = UsuarioId;
             }
-
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var result = await _fornecedorService.Atualizar(_mapper.Map<Fornecedor>(fornecedorViewModel));
