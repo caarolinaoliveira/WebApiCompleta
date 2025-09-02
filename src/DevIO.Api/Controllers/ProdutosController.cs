@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Dev.Business.Models;
 using Microsoft.AspNetCore.Http;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using DevIO.Api.Extensions;
+
 
 namespace DevIO.Api.Controllers
 {
-
+    [Authorize]
     [Route("api/[controller]")]
     public class ProdutosController : MainController
     {
@@ -44,6 +47,7 @@ namespace DevIO.Api.Controllers
             return produtoViewModel;
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> Excluir(Guid id)
         {
@@ -55,6 +59,7 @@ namespace DevIO.Api.Controllers
             return CustomResponse(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {
@@ -185,6 +190,19 @@ namespace DevIO.Api.Controllers
         private async Task<ProdutoViewModel> ObterProduto(Guid id)
         {
             return _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterProdutoFornecedor(id));
+        }
+        
+        [AllowAnonymous]
+        [HttpGet("imagens/{nomeArquivo}")]
+        public IActionResult GetImagem(string nomeArquivo)
+        {
+            var caminho = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/app/demo-webapi/src/assets", nomeArquivo);
+
+            if (!System.IO.File.Exists(caminho))
+                return NotFound();
+
+            var image = System.IO.File.ReadAllBytes(caminho);
+            return File(image, "image/jpeg"); // ou use o tipo correto conforme a extensão
         }
     }
 }

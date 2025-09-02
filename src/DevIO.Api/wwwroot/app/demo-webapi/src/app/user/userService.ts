@@ -15,7 +15,7 @@ export class UserService extends BaseService {
     login(user: User): Observable<User> {
 
         return this.http
-            .post(this.UrlServiceV1 + 'entrar', user, super.ObterHeaderJson())
+            .post('http://localhost:5241/api/conta/entrar', user, super.ObterHeaderJson())
             .pipe(
                 map(super.extractData),
                 catchError(super.serviceError)
