@@ -2,6 +2,8 @@ using DevIO.Api.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,37 +30,9 @@ builder.Services.AddDbContext<Dev.Data.Context.MeuDbContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(DevIO.Api.AutoMapper.AutoMapperConfig));
 
-// builder.Services.AddApiConfig(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSwaggerConfig();
 
-// builder.Services.AddApiConfig();
 
-builder.Services.AddSwaggerGen(c =>
-{
-    // ...outras configurações...
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "Insira o token JWT assim: Bearer {seu token}",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
-    });
-});
 builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;
@@ -91,6 +65,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
+builder.Services.AddHealthChecks()
+    .AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), name: "BancoSQL");
+builder.Services.AddHealthChecksUI().AddInMemoryStorage();  
 
 var app = builder.Build();
 
@@ -106,6 +83,7 @@ else
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -113,5 +91,18 @@ app.UseAuthorization();
 app.UseCors("AllowAngular");
 
 app.MapControllers();
+
+app.UseHealthChecks("/api/hc", new HealthCheckOptions()
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.UseHealthChecksUI(options =>
+{
+    options.UIPath = "/api/hc-ui";
+});
+// app.MapHealthChecksUI(); 
+
 
 app.Run();

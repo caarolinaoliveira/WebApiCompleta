@@ -9,6 +9,7 @@ using Dev.Business.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 
 //precisamos de duas dependencia nessa controller: SignInManager e UserManager
@@ -21,12 +22,14 @@ namespace DevIO.Api.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
+        private readonly ILogger _logger;
 
-        public AuthController(INotificador notificador, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings, IUser appUser) : base(notificador, appUser)
+        public AuthController(ILogger<AuthController> logger, INotificador notificador, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings, IUser appUser) : base(notificador, appUser)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _logger = logger;
 
         }
 
@@ -70,6 +73,7 @@ namespace DevIO.Api.Controllers
 
             if (result.Succeeded)
             {
+                _logger.LogInformation("Usuário {Email} logado com sucesso.", loginUser.Email);
                 return CustomResponse(await GerarJwt(loginUser.Email));
             }
             if (result.IsLockedOut)

@@ -6,6 +6,8 @@ using Dev.Business.Services;
 using Dev.Business.Notificacoes;
 using Dev.Business.Models;
 using DevIO.Api.Extensions;
+using Microsoft.Extensions.Logging;
+using DevIO.Api.Controllers;
 
 namespace DevIO.Api.Configuration
 {
@@ -22,7 +24,6 @@ namespace DevIO.Api.Configuration
             services.AddScoped<INotificador, Notificador>();
             services.AddScoped<IUser, AspNetUser>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
 
             return services;
         }
